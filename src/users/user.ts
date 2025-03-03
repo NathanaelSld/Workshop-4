@@ -34,5 +34,11 @@ export async function user(userId: number) {
     );
   });
 
+  _user.post("/message", (req, res) => {
+    const {message} = req.body;
+    lastReceivedMessage = message;
+    res.send("success");
+  });
+
   return server;
 }
